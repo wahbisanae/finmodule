@@ -1,0 +1,111 @@
+/* Styles pour le header */
+.App-header {
+   background-image: url('../assets/img.png'); /* Assurez-vous que le chemin de l'image est correct */
+   background-size: cover; /* L'image couvre tout l'arrière-plan */
+   background-position: center center; /* Centrage de l'image */
+   height: 20vh; /* Hauteur de l'en-tête pour qu'il occupe toute la hauteur de la fenêtre */
+   color: white; /* Texte en blanc */
+   text-align: center; /* Texte centré */
+   flex-direction: column;
+   justify-content: center; /* Centrer le contenu verticalement */
+   align-items: center; /* Centrer le contenu horizontalement */
+   padding: 0 10px; /* Espacement horizontal */
+   box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+/* Style du titre dans le header */
+.App-header h1 {
+  font-size: 2.5rem; /* Taille du texte */
+  font-weight: 600; /* Gras du texte */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Ombre portée */
+}
+
+
+
+/* Styles pour le conteneur principal de l'application */
+.App {
+  display: flex; /* Flexbox pour structurer l'application */
+  flex-direction: column; /* Disposition en colonne */
+  align-items: center; /* Alignement horizontal au centre */
+  justify-content: center; /* Alignement vertical au centre */
+}
+
+/* Styles pour le formulaire de génération de code */
+.form-container {
+  margin-top: 20px; /* Espacement supérieur */
+  padding: 20px; /* Espacement interne */
+  background-color: #f9f9f9; /* Couleur de fond du formulaire */
+  border-radius: 8px; /* Bords arrondis */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre du conteneur */
+  width: 100%; /* Largeur adaptable */
+  max-width: 600px; /* Largeur maximale */
+}
+
+/* Style des labels dans le formulaire */
+label {
+  display: block; /* Affichage en bloc */
+  margin-bottom: 8px; /* Espacement inférieur */
+  font-weight: 500; /* Texte semi-gras */
+  color: #0535AF; /* Couleur du texte */
+}
+
+/* Style des champs de saisie */
+input[type="file"],
+select {
+  width: 100%; /* Largeur complète */
+  padding: 8px; /* Espacement interne */
+  margin-bottom: 16px; /* Espacement entre les champs */
+  border: 1px solid #ccc; /* Bordure grise */
+  border-radius: 4px; /* Bords arrondis */
+  font-size: 1rem; /* Taille du texte */
+}
+
+/* Style du bouton */
+button {
+  width: 100%; /* Largeur complète */
+  padding: 10px; /* Espacement interne */
+  background-color: #0535AF; /* Couleur principale (mauve) */
+  color: white; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  border-radius: 4px; /* Bords arrondis */
+  font-size: 1rem; /* Taille du texte */
+  cursor: pointer; /* Curseur interactif */
+  transition: background-color 0.3s ease; /* Animation fluide */
+}
+
+button:hover {
+  background-color: #4500b5; /* Couleur au survol */
+}
+
+/* Style pour les messages d'erreur */
+.error-message {
+  color: red; /* Couleur rouge pour l'erreur */
+  font-size: 0.9rem; /* Taille du texte */
+  margin-top: -10px; /* Réduction de l'espacement supérieur */
+  margin-bottom: 10px; /* Espacement inférieur */
+}
+
+/* Style pour le conteneur du code généré */
+.generated-code {
+  margin-top: 20px; /* Espacement supérieur */
+  padding: 20px; /* Espacement interne */
+  background-color: #fff; /* Fond blanc */
+  border-radius: 8px; /* Bords arrondis */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+  width: 90%; /* Largeur adaptable */
+  max-width: 600px; /* Largeur maximale */
+}
+
+.generated-code h2 {
+  margin-bottom: 10px; /* Espacement inférieur */
+  color: #333; /* Couleur du texte */
+}
+
+.generated-code pre {
+  background-color: #f4f4f4; /* Fond du code */
+  padding: 10px; /* Espacement interne */
+  border-radius: 4px; /* Bords arrondis */
+  overflow-x: auto; /* Défilement horizontal */
+  font-family: 'Courier New', Courier, monospace; /* Police de code */
+  font-size: 0.9rem; /* Taille du texte */
+}

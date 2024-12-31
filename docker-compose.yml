@@ -1,0 +1,44 @@
+
+services:
+  backend:
+    build:
+      context: C:\Users\hp\Downloads\finmodule-master\finmodule-master
+      dockerfile: Dockerfile
+    container_name: inspring_hugle
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:yaml
+      SPRING_DATASOURCE_DRIVERCLASSNAME: org.h2.Driver
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: ""
+      SPRING_H2_CONSOLE_ENABLED: "true"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+      SERVER_PORT: 8082
+      SPRING_FREEMARKER_PREFIX: classpath:/templates/
+      SPRING_FREEMARKER_SUFFIX: .ftl
+      SPRING_FREEMARKER_CACHE: "false"
+      SPRING_SERVLET_MULTIPART_ENABLED: "true"
+      SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 2MB
+      SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 2MB
+    networks:
+      - mynetwork
+
+  frontend:
+    build:
+      context: C:\Users\hp\Downloads\finmodule-master\finmodule-master\frontend
+      dockerfile: Dockerfile
+    container_name: beautiful_liskov
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=http://backend:8082
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
